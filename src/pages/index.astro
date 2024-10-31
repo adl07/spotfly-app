@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import {playlists } from "@/lib/data";
+import WelDay from "@/components/WelDay";
 
 import PlayListItemCard from "@/components/PlayListItemCard.astro";
 ---
@@ -14,7 +15,9 @@ import PlayListItemCard from "@/components/PlayListItemCard.astro";
 
         <div class="relative z-10 px-6 pt-10">
             <!--Greatings -->
-            <h1 class="text-4xl font-bold">Buenos dias</h1>
+            <div class="text-4xl font-bold">
+                <WelDay client:visible/>
+            </div>
             <div class="flex flex-wrap mt-6 gap-4">
                 {
                     playlists.map((play)=> <PlayListItemCard playlist={play}/>)
